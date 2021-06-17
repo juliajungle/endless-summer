@@ -1,38 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
 .App {
-  text-align: center;
+  margin: 10px;
+}
+.postcard-wrapper {
+  position: relative;
+  width: 500px;
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+label {
+  font-family: "Quicksand", sans-serif;
+  color: #4e4e4e;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+textarea {
+  outline: none;
+  color: #4e4e4e;
+  white-space: pre-wrap;
+  display: block;
+  width: 400px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  margin-top: 10px;
+  resize: none;
+  border: 1px solid #9a9a9a6e;
+  padding: 5px;
+  box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 26%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+form {
+  padding-bottom: 20px;
+}
+
+input[type="submit"] {
+  border-style: solid;
+  border-color: #ee7ab1;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  color: #000000;
+  font-size: 16px;
+  background-color: #ee7ab1;
+  box-shadow: 0px 0px 10px #ee7ab1;
+  border-width: 0px 0px 0px 0px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  border-radius: 0px 0px 0px 0px;
+  cursor: pointer;
+  font-family: "Quicksand", sans-serif;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+input[type="submit"]:hover {
+  box-shadow: 0px 0px 0px white;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
