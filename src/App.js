@@ -48,7 +48,6 @@ function App() {
   };
 
   const handleFontSize = (value) => {
-    // console.log(e.target.innerText);
     setFontSize(value);
   };
 
