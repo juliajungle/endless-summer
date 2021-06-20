@@ -118,7 +118,7 @@ function App() {
       resizedContext.scale(0.5, 0.5);
       var image = resizedCanvas.toDataURL("image/jpg", 1);
 
-      saveAs(image, "endless-summer.jpg");
+      saveAs(image, "endless-summer");
     });
   };
 
