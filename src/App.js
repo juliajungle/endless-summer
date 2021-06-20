@@ -43,7 +43,7 @@ function App() {
   const [fontSize, setFontSize] = useState("14px");
   const [font, setFont] = useState("Shadows Into Light");
   const componentRef = useRef();
-  const testRef = useRef();
+  const postcardRef = useRef();
   const handleMessageChange = (event) => {
     setMessage(event.target.value);
   };
@@ -51,7 +51,7 @@ function App() {
   const handleSubmit = (event) => {
     // download postcard
     event.preventDefault();
-    document.getElementById("test").scrollIntoView();
+    componentRef.current.scrollIntoView();
 
     canvas();
   };
@@ -86,23 +86,35 @@ function App() {
     elem.remove();
   };
 
+  const getAdjustments = () => {
+    if (window.innerWidth < 575) {
+      return { heightAdjustment: 10, widthAdjustment: 0 };
+    } else if (window.innerWidth < 900) {
+      return { heightAdjustment: 10, widthAdjustment: 10 };
+    }
+
+    return { heightAdjustment: 0, widthAdjustment: 0 };
+  };
+
   const canvas = () => {
-    const input = document.getElementById("test");
+    const input = componentRef.current;
+
     const width = input.clientWidth;
     const height = input.clientHeight;
-    console.log("??", width, height);
+
+    const { widthAdjustment, heightAdjustment } = getAdjustments();
 
     html2canvas(input, {
-      width: width,
-      height: height,
+      width: width + widthAdjustment,
+      height: height + heightAdjustment,
     }).then((canvas) => {
       var resizedCanvas = document.createElement("canvas");
 
       var resizedContext = resizedCanvas.getContext("2d");
       // get width of screen for mobile
-      resizedCanvas.height = height + 40;
-      resizedCanvas.width = width + 20;
-      resizedContext.drawImage(canvas, 0, 0, width + 20, height);
+      resizedCanvas.height = height;
+      resizedCanvas.width = width;
+      resizedContext.drawImage(canvas, 0, 0, width, height);
       resizedContext.scale(0.5, 0.5);
       var image = resizedCanvas.toDataURL("image/jpg", 1);
 
@@ -113,16 +125,14 @@ function App() {
   return (
     <StyledApp>
       <StyledForm onSubmit={handleSubmit}>
-        <StyledPostcardWrapper>
-          <div ref={componentRef} id="test">
-            <StyledImage width="100%" src={postcard} />
-            <StyledPostcardMessage>
-              <StyledImage width="100%" src={postcardBack} />
-              <StyledMessage size={fontSize} font={font}>
-                {message}
-              </StyledMessage>
-            </StyledPostcardMessage>
-          </div>
+        <StyledPostcardWrapper ref={componentRef}>
+          <StyledImage width="100%" src={postcard} ref={postcardRef} />
+          <StyledPostcardMessage>
+            <StyledImage width="100%" src={postcardBack} />
+            <StyledMessage size={fontSize} font={font}>
+              {message}
+            </StyledMessage>
+          </StyledPostcardMessage>
         </StyledPostcardWrapper>
 
         <StyledWrapper>
@@ -179,8 +189,6 @@ function App() {
           <StyledButton type="submit" value="Download" />
         </StyledWrapper>
       </StyledForm>
-
-      <StyledModal id="modal" ref={testRef}></StyledModal>
     </StyledApp>
   );
 }

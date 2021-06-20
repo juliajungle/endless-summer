@@ -12,6 +12,11 @@ export const StyledText = styled.p`
   letter-spacing: 0.6px;
   color: #000;
   text-transform: uppercase;
+
+  @media (max-width: ${maxWidthMobile}) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 `;
 
 export const StyledFontsWrapper = styled.div`
@@ -53,7 +58,7 @@ export const StyledImage = styled.img`
 
   width: 500px;
 
-  @media (max-width: ${maxWidthMedium}) {
+  @media (max-width: ${maxWidthMobile}) {
     width: 100%;
   }
 `;
@@ -124,24 +129,35 @@ const listStyles = css`
 `;
 export const StyledList = styled.ul`
   ${listStyles}
+
+  @media (max-width: ${maxWidthMobile}) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 `;
 
 export const StyledSizeList = styled.ul`
   ${listStyles}
   display: flex;
+
+  @media (max-width: ${maxWidthMobile}) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 `;
 
 export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px;
+
   width: 400px;
   margin-left: 10px;
 
   @media (max-width: ${maxWidthMedium}) {
     width: auto;
     margin-left: 0;
+    padding: 10px;
   }
 `;
 
@@ -175,20 +191,24 @@ export const StyledModal = styled.div`
 `;
 
 export const StyledPostcardWrapper = styled.div`
-  position: relative;
   width: 500px;
-  padding: 10px;
-  box-sizing: border-box;
+  height: 694px;
+  // box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  padding: 0;
   @media (max-width: ${maxWidthMedium}) {
-    width: 100%;
+    margin: auto;
   }
+
   @media (max-width: ${maxWidthMobile}) {
-    width: auto;
+    width: 100%;
+    height: auto;
   }
 `;
 
 export const StyledApp = styled.div`
-  margin: 10px;
+  // padding: 10px;
   background-color: #ef69a5;
 
   @media (max-width: ${maxWidthMobile}) {
@@ -253,6 +273,9 @@ export const StyledInput = styled.input`
   cursor: pointer;
   font-family: "Open Sans", cursive;
   padding: 10px;
+  @media (max-width: ${maxWidthMobile}) {
+    // width: 100%;
+  }
 `;
 
 export const StyledLabel = styled.label`
