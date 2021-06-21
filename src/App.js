@@ -92,7 +92,7 @@ function App() {
       return { heightAdjustment: 10, widthAdjustment: 10 };
     }
 
-    return { heightAdjustment: 0, widthAdjustment: 0 };
+    return { heightAdjustment: 10, widthAdjustment: 0 };
   };
 
   const canvas = () => {
