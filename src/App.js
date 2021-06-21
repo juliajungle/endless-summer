@@ -125,9 +125,9 @@ function App() {
     <StyledApp>
       <StyledForm onSubmit={handleSubmit}>
         <StyledPostcardWrapper ref={componentRef}>
-          <StyledImage width="100%" src={postcard} ref={postcardRef} />
+          <StyledImage alt="postcard-front" src={postcard} ref={postcardRef} />
           <StyledPostcardMessage>
-            <StyledImage width="100%" src={postcardBack} />
+            <StyledImage alt="postcard-back" src={postcardBack} />
             <StyledMessage size={fontSize} font={font}>
               {message}
             </StyledMessage>

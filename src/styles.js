@@ -22,22 +22,27 @@ export const StyledText = styled.p`
 export const StyledFontsWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 390px;
+
+  @media (max-width: ${maxWidthMobile}) {
+    width: 100%;
+  }
 `;
 export const StyledFontSize = styled.div`
   li {
-    color: #9a9a9a;
+    color: #737272;
     width: 28px;
     height: 23px;
     text-align: center;
   }
 `;
-export const StyledFontColor = styled.div``;
+
 export const StyledFonts = styled.div`
   li {
     cursor: pointer;
     background-color: #ffffff;
     font-size: 16px;
-    color: #9a9a9a;
+    color: #737272;
     height: 25px;
     position: relative;
     padding: 3px;
@@ -88,7 +93,7 @@ const listItemStyles = css`
   border: ${(props) =>
     props.isActive ? `#050505 solid 2px;` : `#ef69a5 solid 2px`};
   line-height: 23px;
-  color: #9a9a9a;
+  color: #737272;
   position: relative;
   padding-left: 3px;
   padding-right: 2px;
@@ -183,17 +188,9 @@ export const StyledTextarea = styled.textarea`
   }
 `;
 
-export const StyledModal = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
-
 export const StyledPostcardWrapper = styled.div`
   width: 500px;
   height: 694px;
-  // box-sizing: border-box;
   margin: 0;
   border: 0;
   padding: 0;
@@ -208,7 +205,6 @@ export const StyledPostcardWrapper = styled.div`
 `;
 
 export const StyledApp = styled.div`
-  // padding: 10px;
   background-color: #ef69a5;
 
   @media (max-width: ${maxWidthMobile}) {
@@ -222,8 +218,7 @@ export const StyledPostcardMessage = styled.div`
 
 export const StyledButton = styled.input`
   border-style: solid;
-  margin-right: 15px;
-  margin-bottom: 15px;
+
   color: white;
   font-size: 16px;
   background-color: #050505;
@@ -234,47 +229,11 @@ export const StyledButton = styled.input`
   font-family: "Audiowide", cursive;
   padding: 10px;
   text-transform: uppercase;
-  width: 300px;
+  width: 380px;
+  margin-left: 10px;
   @media (max-width: ${maxWidthMobile}) {
     width: 100%;
-  }
-`;
-
-export const StyledEmailButton = styled.button`
-  border-style: solid;
-  margin-right: 15px;
-  margin-bottom: 15px;
-  color: white;
-  font-size: 16px;
-  background-color: #050505;
-  border: 0;
-  border-radius: 0;
-  -webkit-appearance: none;
-  cursor: pointer;
-  font-family: "Audiowide", cursive;
-  padding: 10px;
-  text-transform: uppercase;
-  width: 300px;
-  @media (max-width: ${maxWidthMobile}) {
-    width: 100%;
-  }
-`;
-
-export const StyledInput = styled.input`
-  border-style: solid;
-  margin-right: 15px;
-  margin-bottom: 15px;
-  color: black;
-  font-size: 16px;
-  background-color: #white;
-  border: 0;
-  border-radius: 0;
-  -webkit-appearance: none;
-  cursor: pointer;
-  font-family: "Open Sans", cursive;
-  padding: 10px;
-  @media (max-width: ${maxWidthMobile}) {
-    // width: 100%;
+    margin-left: 0;
   }
 `;
 
