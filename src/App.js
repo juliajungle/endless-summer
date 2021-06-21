@@ -15,7 +15,6 @@ import {
   StyledListItem,
   StyledWrapper,
   StyledTextarea,
-  StyledModal,
   StyledPostcardWrapper,
   StyledApp,
   StyledPostcardMessage,
